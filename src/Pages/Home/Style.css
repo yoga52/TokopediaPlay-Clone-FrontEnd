@@ -1,0 +1,13 @@
+.video-container{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 140px;
+}
+
+
+footer{
+    background-color: black;
+    height: 200px;
+}

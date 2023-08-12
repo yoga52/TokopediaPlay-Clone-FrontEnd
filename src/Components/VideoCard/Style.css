@@ -1,0 +1,88 @@
+
+.video-card img {
+    pointer-events: none;
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    z-index: -1;
+  }
+  .video-card{
+    width: 200px;
+    height: 300px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.video-card .top{
+    color: white;
+    padding: 20px 10px;
+    
+    font-size: 20px;
+    display: flex;
+    border: 20px;
+    
+}
+
+.video-card .top p{
+    font-size: 14px;
+    margin: 1px 7px;
+}
+.video-card .top p.views{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.video-card .top .box--live{
+    background-color: red;
+    border-radius: 15px;
+}
+.video-card .top .box--views{
+    margin-left: 4px;
+    background-color: rgba(108, 102, 102, 0.7);opacity: 1;
+    border-radius: 15px;
+}
+
+.top p.live{
+    box-sizing: border-box;
+}
+
+.video-card .bottom{
+    border: 2px solid red;
+    color: white;
+    margin: 2px 0;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    border: solid red 9px;
+    border: 20px;
+    
+}
+
+.video-card .bottom p {
+
+    border: 2px solid black;
+    height: auto;
+}
+
+.video-card .bottom .coupon{
+    background-color: blue;
+    border: 2px solid black;
+    height: auto;
+}
+
+.video-card .bottom .video-title{
+    background-color: red;
+    border: 2px solid black;
+    height: auto;
+}
+
+.video-card .bottom .store{
+    background-color: green;
+    border: 2px solid black;
+    height: auto;
+}

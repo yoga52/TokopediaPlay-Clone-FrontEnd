@@ -1,0 +1,48 @@
+.comment-section{
+
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.comment-box{
+    border-radius: 50px;
+    margin: 10px;
+    height: auto;
+    display: flex;
+    word-wrap: break-word;
+    padding: 10px;
+    filter:drop-shadow(16px 5px 10px black);
+    background-color: white;
+}
+
+.comment-box:hover{
+    transition: 0.2s;
+    filter:drop-shadow(-10px 5px 10px black);
+
+}
+.comment-box .username{
+    padding: 10px 0;
+    font-weight: bold;
+    
+}
+
+
+.comment-box .user-logo img{
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-direction:row ;
+    margin: 10px;
+}
+
+.input-box .textbox{
+    width: 200px;
+}

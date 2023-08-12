@@ -1,0 +1,23 @@
+.video-detail-container{
+    margin-top: 140px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.products{
+    padding-left:20px ;
+}
+
+.video-view{
+    border: black 2px solid;
+
+}
+
+.comment-section{
+
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
