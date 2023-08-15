@@ -4,6 +4,7 @@ import Home from "./Pages/Home/Index";
 import Footer from "./Templates/Footer"
 import Header from "./Templates/Header"
 import VideoDetail from "./Pages/VideoDetail";
+
 function App() {
   return (
     <>
