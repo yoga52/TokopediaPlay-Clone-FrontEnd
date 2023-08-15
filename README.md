@@ -45,4 +45,4 @@ Clone Project Of Tokopedia Play that shows list of videos from youtube and user 
 ## Deployment
 
 You can Visit this Page Right Here
-https://tokopedia-play-clone-front-by6e5dylt-kabuki52.vercel.app/
+https://tokopedia-play-clone-front-end.vercel.app/

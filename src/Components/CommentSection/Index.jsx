@@ -50,8 +50,6 @@ export default function CommentSection({ videoID }) {
         console.log('Typed ' + name + '  ' + value);
         setFormData({ ...formData, [name]: value });
     };
-
-
     const handleFetchComments = async () => {
         const response = await fetch(import.meta.env.VITE_BACKEND_SERVER + `/comments/${videoID}`);
         const data = await response.json();
@@ -59,7 +57,6 @@ export default function CommentSection({ videoID }) {
         setComments(data)
         console.log(data);
     }
-
     useEffect(() => {
         console.log('Run Once');
         handleFetchComments()
