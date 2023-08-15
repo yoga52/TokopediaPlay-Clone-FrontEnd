@@ -13,14 +13,13 @@ export default function CommentSection({ videoID }) {
         comment: ""
     })
     const [comments, setComments] = useState([])
-    const [userLogo, setUserLogo] = useState([userLogo1,userLogo2,userLogo3])
-    const R = (min, max)=> { // min and max included 
+    const [userLogo, setUserLogo] = useState([userLogo1, userLogo2, userLogo3])
+    
+    const R = (min, max) => { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        console.log(formData);
+    const hitCommentAPI = async () => {
         try {
             const response = await fetch(import.meta.env.VITE_BACKEND_SERVER + `/comments/${videoID}`, {
                 method: 'POST',
@@ -28,7 +27,7 @@ export default function CommentSection({ videoID }) {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
-                    }
+                }
             });
             const data = await response.json();
             console.log(import.meta.env.VITE_BACKEND_SERVER + `/comments/${videoID}`);
@@ -38,7 +37,11 @@ export default function CommentSection({ videoID }) {
             console.log(error);
             console.log(JSON.stringify(formData));
         }
-
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(formData);
+        hitCommentAPI();
     }
 
     const handleMyText = (e) => {
@@ -69,7 +72,7 @@ export default function CommentSection({ videoID }) {
                     <CommentBox key={index}
                         username={data.username}
                         comment={data.comment}
-                        userLogo={userLogo[R(0,2)]}
+                        userLogo={userLogo[R(0, 2)]}
                     />
 
                 ))}
