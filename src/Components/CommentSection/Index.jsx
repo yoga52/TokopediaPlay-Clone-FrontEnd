@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import CommentBox from './CommentBox/Index'
 import './Style.css'
 import userLogo1 from '../../assets/UserLogos/1.png'
