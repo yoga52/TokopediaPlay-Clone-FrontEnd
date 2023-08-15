@@ -19,6 +19,7 @@ export default function CommentSection({ videoID }) {
     }
 
     const handleSubmit = async (e) => {
+        e.preventDefault()
         console.log(formData);
         try {
             const response = await fetch(import.meta.env.VITE_BACKEND_SERVER + `/comments/${videoID}`, {
@@ -32,6 +33,7 @@ export default function CommentSection({ videoID }) {
             const data = await response.json();
             console.log(import.meta.env.VITE_BACKEND_SERVER + `/comments/${videoID}`);
             console.log(data);
+            handleFetchComments()
         } catch (error) {
             console.log(error);
             console.log(JSON.stringify(formData));
