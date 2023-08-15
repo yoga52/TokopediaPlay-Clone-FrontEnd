@@ -18,7 +18,7 @@ export default function CommentSection({ videoID }) {
     }
 
     const handleSubmit = async (e) => {
-
+        e.preventDefault()
         console.log(formData);
         try {
             const response = await fetch(import.meta.env.VITE_BACKEND_SERVER + `/comments/${videoID}`, {
