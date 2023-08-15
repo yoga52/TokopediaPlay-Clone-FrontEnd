@@ -30,6 +30,7 @@ export default function CommentSection({ videoID }) {
             });
             const data = await response.json();
             console.log(import.meta.env.VITE_BACKEND_SERVER + `/comments/${videoID}`);
+            handleFetchComments()
             console.log(data);
         } catch (error) {
             console.log(error);
