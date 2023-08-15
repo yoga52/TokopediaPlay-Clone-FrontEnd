@@ -43,7 +43,6 @@ export default function CommentSection({ videoID }) {
         console.log(formData);
         hitCommentAPI();
     }
-
     const handleMyText = (e) => {
         console.log('Typed');
         const { name, value } = e.target;
