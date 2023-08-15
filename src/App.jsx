@@ -3,7 +3,7 @@ import { useAuth } from "./Contexts/AuthContext"
 import Home from "./Pages/Home/Index";
 import Footer from "./Templates/Footer"
 import Header from "./Templates/Header"
-import VideoDetail from "./Pages/VideoDetail";
+import VideoDetail from "./Pages/VideoDetail/Details";
 
 function App() {
   return (
