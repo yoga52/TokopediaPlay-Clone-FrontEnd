@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ProductCard from '../../Components/ProductCard/Index'
 import VideoViewer from '../../Components/VideoViewer/Index'
 import CommentSection from '../../Components/CommentSection/Index'
