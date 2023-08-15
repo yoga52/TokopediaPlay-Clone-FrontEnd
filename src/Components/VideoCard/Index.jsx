@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Style.css'
 // eslint-disable-next-line react/prop-types
 export default function VideoCard({ videoID, views, imgURL, videoTitle, store }) {
-
   const viewLink ='/video-detail/'+videoID
+  const handleView = async ()=>{
+    try{
+      const response = await fetch(import.meta.env.VITE_BACKEND_SERVER+`/videos/view/${videoID}`,{method:'PATCH'});
+      const data = await response.json();
+      console.log(import.meta.env.VITE_BACKEND_SERVER+`/videos${videoID}`);
+      console.log(data);
+    }catch(error){
+      console.log("This Is error "+error);
+    }
+  }
 
   return (
     <>
-      <Link to={viewLink} style={{ textDecoration: 'none' }}>
+      <Link onClick={handleView} to={viewLink} style={{ textDecoration: 'none' }}>
         <div className="video-card" >
 
           <img src={imgURL} alt="" />

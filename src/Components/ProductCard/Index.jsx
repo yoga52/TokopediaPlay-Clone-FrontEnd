@@ -1,14 +1,20 @@
 import React from 'react'
 import './Style.css'
 
-export default function ProductCard() {
+// eslint-disable-next-line react/prop-types
+export default function ProductCard({ imageURL, price ,productLink}) {
+
+  const handleOnClick = (e,link)=>{
+    e.preventDefault()
+    window.open(link);
+  }
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={e=>handleOnClick(e,productLink)}>
       <div className="product-image">
-        <img src="https://images.ygoprodeck.com/images/cards/4280258.jpg" alt="" />
+        <img src={imageURL} alt="" />
       </div>
       <div className="product-details">
-        <span className="price">RP.150000</span>
+        <span className="price">RP.{price}</span>
         <span className="buy">Buy</span>
       </div>
     </div>

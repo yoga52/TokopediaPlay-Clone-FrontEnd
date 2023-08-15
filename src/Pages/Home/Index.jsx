@@ -1,46 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Style.css'
 import VideoCard from '../../Components/VideoCard/Index'
 export default function Home() {
+    const [videoData, setVideoData] = useState([])
 
-    const videoData = [
-        {
-            id: 0,
-            views:122,
-            name: "Gigih Store",
-            videoTitle: "Limited Exclusive",
-            imageURL: "https://images.ygoprodeck.com/images/cards/4280258.jpg"
-        },
-        {
-            id: 1,
-            views:1333,
-            name: "Yugioh Store",
-            videoTitle: "New Dune Special Discount Here",
-            imageURL: "https://images.ygoprodeck.com/images/cards/4280258.jpg"
-        },
-        {
-            id: 2,
-            views:13221,
-            name: "Kekw",
-            videoTitle: "Free Items Here",
-            imageURL: "https://images.ygoprodeck.com/images/cards/4280258.jpg"
-        }
-    ]
+    const handleFetchData = async () => {
+        const response = await fetch(import.meta.env.VITE_BACKEND_SERVER + `/videos`);
+        console.log(import.meta.env.VITE_BACKEND_SERVER + `/videos`);
+        const data = await response.json();
+        setVideoData(data)
+    }
+
+    useEffect(() => {
+        handleFetchData()
+
+    }, [])
+
     return (
         <div className="video-container">
 
-            {videoData.map(data => (
-                <>
-                    <VideoCard
-                        videoID={data.id}
-                        views={data.views}
-                        imgURL={data.imageURL}
-                        videoTitle={data.videoTitle}
-                        store={data.name}
-                    />
-                </>
+            {videoData.map((data,index) => {
+                return (
+                        <VideoCard key={index}
+                            videoID={data._id}
+                            views={data.views}
+                            imgURL={data.thumbnailURL}
+                            videoURL={data.videoURL}
+                            videoTitle={data.name}
+                            store={data.store.name}
+                        />
 
-            ))}
+                )
+            }
+
+
+            )}
 
         </div>
 
